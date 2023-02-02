@@ -1,2 +1,11 @@
-Always run npm install in the project folder after cloning to the computer.
-To start the server, run npm run start
+npm install
+npm install -g firebase-tools
+firebase login --no-localhost
+npm run start //development environment
+npm run build //production environment
+firebase deploy
+
+
+
+firebase logout
+
