@@ -6,14 +6,23 @@ import './App.css';
 
 function App() {
 
-  const [username, setUsername] = useState('Test user');
-  const [messageInput, setMessageInput] = useState('');
-  const [chatLog, setChatLog] = useState([]);
+  const testChatLog = [
+    { username: 'Roger', message: 'Are you going to the basketball game tonight?' },
+    { username: 'David', message: 'Yes I am... what are you doing after the game?' },
+    { username: 'Roger', message: 'Going home... what about you?' },
+    { username: 'David', message: "I'm going to Denny's - you want to go too?" },
+    { username: 'Roger', message: 'Sounds good -- see you there' }
+  ];
+
+
+  const [username, setUsername] = useState('Roger');
+  const [messageInput, setMessageInput] = useState('New chat');
+  const [chatLog, setChatLog] = useState(testChatLog);
 
   return (
     <div className="chat-container">
       <Username username={username} />
-      <ChatLog chatLog={chatLog} />
+      <ChatLog chatLog={chatLog} username={username}/>
       <MessageInput messageInput={messageInput} />
     </div>
   );
