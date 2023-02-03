@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: blue;
+  color: yellow;
 }
 
 .chat-container {
@@ -9,7 +11,7 @@
   flex-direction: column;
   width: 400px;
   height: 95vh;
-  border: 2px solid black;
+  border: 5px ridge yellow;
   margin: 10px;
 }
 
@@ -28,26 +30,15 @@
   width: 100%;
 }
 
-.chat-username {
-  background-color: rgb(204,218,246);
-  border-radius:10px
-}
 
-.chat-log div {
-  background-color : rgb(238,204,205);
-  border-radius: 10px
-}
 
-.chat-message-input {
-  background-color: rgb(220,233,213);
-  border-radius: 10px
-}
 
 .chat-item {
-  margin: 10px 0 10px 0 !important
+  margin: 10px 5px 10px 5px !important;
+  border: 5px ridge yellow;
+  
 }
 
 .chat-from-me {
   text-align: right;
-  background-color: rgb(21, 86, 216) !important
 }
