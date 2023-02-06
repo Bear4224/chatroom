@@ -20,11 +20,14 @@ function App() {
   const [chatLog, setChatLog] = useState(testChatLog);
 
   return (
+    <>
+    <div className="chat-title">GusTheChat</div>
     <div className="chat-container">
-      <Username username={username} />
+      <div className="username-box"><Username username={username} /></div>
       <ChatLog chatLog={chatLog} username={username}/>
       <MessageInput messageInput={messageInput} />
     </div>
+    </>
   );
 }
 

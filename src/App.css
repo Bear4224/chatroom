@@ -1,4 +1,14 @@
 * {
+  background-color: blue;
+}
+
+.chat-title{
+  color: yellow;
+  font-size: 4.7em;
+  text-shadow: 4px 4px orange;
+}
+
+* .chat-container{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,7 +20,7 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 95vh;
+  height: 90vh;
   border: 5px ridge yellow;
   margin: 10px;
 }
@@ -28,10 +38,14 @@
 .chat-message-input input {
   font-size: 14px;
   width: 100%;
+  color: yellow;
+  border-color: yellow;
 }
 
-
-
+.username-box {
+  border: 5px ridge yellow;
+  margin: 5px 5px 5px 5px;
+}
 
 .chat-item {
   margin: 10px 5px 10px 5px !important;
