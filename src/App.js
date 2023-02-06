@@ -14,10 +14,14 @@ function App() {
     { username: 'Roger', message: 'Sounds good -- see you there' }
   ];
 
-
   const [username, setUsername] = useState('Roger');
   const [messageInput, setMessageInput] = useState('New chat');
   const [chatLog, setChatLog] = useState(testChatLog);
+  const onChange = (evt) => setMessageInput(evt.target.value);
+  const onSubmit = function(evt) {
+    evt.preventDefault();
+    console.log('Submitted');
+  }
 
   return (
     <>
@@ -25,7 +29,7 @@ function App() {
     <div className="chat-container">
       <div className="username-box"><Username username={username} /></div>
       <ChatLog chatLog={chatLog} username={username}/>
-      <MessageInput messageInput={messageInput} />
+      <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit}/>
     </div>
     </>
   );
