@@ -1,35 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Username from './Username';
 import ChatLog from './ChatLog';
 import MessageInput from './MessageInput';
-import './App.css';
+import './GusTheChat.css';
 
-function App() {
+function App(props) {
 
-  const testChatLog = [
-    { username: 'Roger', message: 'Are you going to the basketball game tonight?' },
-    { username: 'David', message: 'Yes I am... what are you doing after the game?' },
-    { username: 'Roger', message: 'Going home... what about you?' },
-    { username: 'David', message: "I'm going to Denny's - you want to go too?" },
-    { username: 'Roger', message: 'Sounds good -- see you there' }
-  ];
-
+  useEffect(() => {
+    props.firebase.database().ref('chatLog').on('value', snapshot => {
+      let items = snapshot.val();
+      if (items) {
+        items = Object.values(items);
+      } else {
+        items = [];
+      }
+      setChatLog(items);
+    })
+  }, [props.firebase])
+  
   const [username, setUsername] = useState('Roger');
   const [messageInput, setMessageInput] = useState('New chat');
-  const [chatLog, setChatLog] = useState(testChatLog);
+  const [chatLog, setChatLog] = useState([]);
+  
   const onChange = (evt) => setMessageInput(evt.target.value);
+  
   const onSubmit = function(evt) {
     evt.preventDefault();
-    console.log('Submitted');
+    console.log('Submitted!');
   }
-
+  
   return (
     <>
     <div className="chat-title">GusTheChat</div>
     <div className="chat-container">
-      <div className="username-box"><Username username={username} /></div>
-      <ChatLog chatLog={chatLog} username={username}/>
-      <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit}/>
+      <Username username={username} />
+      <ChatLog chatLog={chatLog} />
+      <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit} />
     </div>
     </>
   );

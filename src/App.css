@@ -1,58 +1,24 @@
 * {
-  background-color: blue;
-}
-
-.chat-title{
-  color: yellow;
-  font-size: 4.7em;
-  text-shadow: 4px 4px orange;
-}
-
-* .chat-container{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: blue;
-  color: yellow;
 }
 
 .chat-container {
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 90vh;
-  border: 5px ridge yellow;
+  height: 95vh;
+  border: 2px solid black;
   margin: 10px;
 }
 
 .chat-container div {
-  margin: 5x 10px 5px 10px;
+  border: 1px solid blue;
+  margin: 10px 10px 10px 10px;
   padding: 10px;
 }
 
 .chat-log {
   flex: 1;
-  overflow-y: scroll;
-}
-
-.chat-message-input input {
-  font-size: 14px;
-  width: 100%;
-  color: yellow;
-  border-color: yellow;
-}
-
-.username-box {
-  border: 5px ridge yellow;
-  margin: 5px 5px 5px 5px;
-}
-
-.chat-item {
-  margin: 10px 5px 10px 5px !important;
-  border: 5px ridge yellow;
-  
-}
-
-.chat-from-me {
-  text-align: right;
 }
