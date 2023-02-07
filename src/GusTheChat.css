@@ -42,6 +42,10 @@
   border-color: yellow;
 }
 
+::placeholder {
+  color: yellow;
+}
+
 .username-box {
   border: 5px ridge yellow;
   margin: 5px 5px 5px 5px;

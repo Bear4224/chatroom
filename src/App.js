@@ -18,15 +18,18 @@ function App(props) {
     })
   }, [props.firebase])
   
-  const [username, setUsername] = useState('Roger');
-  const [messageInput, setMessageInput] = useState('New chat');
+  const [username, setUsername] = useState('Jacob');
+  const [messageInput, setMessageInput] = useState('');
   const [chatLog, setChatLog] = useState([]);
   
   const onChange = (evt) => setMessageInput(evt.target.value);
   
   const onSubmit = function(evt) {
     evt.preventDefault();
-    console.log('Submitted!');
+    if (messageInput.length === 0) return;
+    let payload = {message: messageInput, username: username};
+    props.firebase.database().ref('chatLog').push(payload);
+    setMessageInput('');
   }
   
   return (

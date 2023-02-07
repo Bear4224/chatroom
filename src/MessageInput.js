@@ -8,7 +8,8 @@ function MessageInput(props) {
                name="message-input"
                id="message-input" 
                onChange={props.onChange}
-               value={props.messageInput} />
+               value={props.messageInput}
+               placeholder="Enter your message" />
       </form>
     </div>
   );
