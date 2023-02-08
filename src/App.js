@@ -38,6 +38,7 @@ function App(props) {
     <div className="chat-title">GusTheChat</div>
     <div className="chat-container">
       <Username username={username} />
+      <hr className="breakline"></hr>
       <ChatLog chatLog={chatLog} username={username}/>
       <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit} />
     </div>

@@ -30,6 +30,11 @@
   padding: 10px;
 }
 
+.breakline{
+  border-bottom: 5px ridge yellow;
+  width: 99.5%
+}
+
 .chat-log {
   flex: 1;
   overflow-y: scroll;
