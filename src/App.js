@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Username from './Username';
 import ChatLog from './ChatLog';
 import MessageInput from './MessageInput';
+//import './App.css';
 import './GusTheChat.css';
 
 function App(props) {
@@ -37,7 +38,7 @@ function App(props) {
     <div className="chat-title">GusTheChat</div>
     <div className="chat-container">
       <Username username={username} />
-      <ChatLog chatLog={chatLog} />
+      <ChatLog chatLog={chatLog} username={username}/>
       <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit} />
     </div>
     </>

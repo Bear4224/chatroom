@@ -14,11 +14,20 @@
 }
 
 .chat-container div {
-  border: 1px solid blue;
   margin: 10px 10px 10px 10px;
   padding: 10px;
 }
 
 .chat-log {
   flex: 1;
+}
+
+.chat-username {
+  background-color: rgb(204, 218, 246);
+  border-radius: 10px;
+}
+
+.chat-log div {
+  background-color: rgb(238, 204, 205);
+  border-radius: 10px;
 }
