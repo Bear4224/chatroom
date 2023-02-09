@@ -16,13 +16,16 @@ function LoginPage(props) {
         <div className="chat-login-page-container">
         <div className="chat-login-page-controls-container">
             <h4>Set your username</h4>
-            <input  type='text'
+            <p className='size-message'>1-25 characters</p>
+            <input  className='login-input'
+                    type='text'
                     placeholder="Username"
                     value={username}
                     onChange={onChange} />
-            <button type="button"
+            <button className="login-button"
+                    type="button"
                     onClick={onClick}
-                    disabled={username.length===0}>
+                    disabled={(username.length===0) || (username.length > 25)}>
                         Login
                         </button>
         </div>

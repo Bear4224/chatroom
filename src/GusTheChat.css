@@ -45,6 +45,7 @@
   width: 100%;
   color: yellow;
   border-color: yellow;
+  background-color: rgb(38, 38, 209);
 }
 
 ::placeholder {
@@ -63,4 +64,27 @@
 
 .chat-from-me {
   text-align: right;
+}
+
+.chat-login-page-container{
+  width: 400px;
+  height: 15vh;
+  border: 5px ridge yellow;
+  margin: 10px;
+  color: yellow;
+}
+
+.login-button{
+  color: yellow;
+  background-color: rgb(38, 38, 209);
+  border: 2px ridge yellow;
+}
+
+.login-input{
+  color:yellow;
+  background-color: rgb(38, 38, 209);
+}
+
+.size-message{
+  font-size: 1.5vh
 }
