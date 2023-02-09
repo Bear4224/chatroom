@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Username from './Username';
-import ChatLog from './ChatLog';
-import MessageInput from './MessageInput';
+//import Username from './Username';
+//import ChatLog from './ChatLog';
+//import MessageInput from './MessageInput';
 //import './App.css';
+import Chat from './Chat.js';
 import './GusTheChat.css';
 
 function App(props) {
@@ -22,7 +23,8 @@ function App(props) {
   const [username, setUsername] = useState('Jacob');
   const [messageInput, setMessageInput] = useState('');
   const [chatLog, setChatLog] = useState([]);
-  
+  const [appstate, setAppState] = useState('login');
+
   const onChange = (evt) => setMessageInput(evt.target.value);
   
   const onSubmit = function(evt) {
@@ -34,15 +36,11 @@ function App(props) {
   }
   
   return (
-    <>
-    <div className="chat-title">GusTheChat</div>
-    <div className="chat-container">
-      <Username username={username} />
-      <hr className="breakline"></hr>
-      <ChatLog chatLog={chatLog} username={username}/>
-      <MessageInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit} />
-    </div>
-    </>
+    <Chat username={username}
+          chatLog={chatLog}
+          messageInput={messageInput}
+          onChange={onChange}
+          onSubmit={onSubmit} />
   );
 }
 
