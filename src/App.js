@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 //import MessageInput from './MessageInput';
 //import './App.css';
 import Chat from './Chat.js';
+import LoginPage from './LoginPage.js';
 import './GusTheChat.css';
 
 function App(props) {
@@ -20,7 +21,7 @@ function App(props) {
     })
   }, [props.firebase])
   
-  const [username, setUsername] = useState('Jacob');
+  const [username, setUsername] = useState('');
   const [messageInput, setMessageInput] = useState('');
   const [chatLog, setChatLog] = useState([]);
   const [appstate, setAppState] = useState('login');
@@ -34,13 +35,21 @@ function App(props) {
     props.firebase.database().ref('chatLog').push(payload);
     setMessageInput('');
   }
+
+  const onLogin = function(username) {
+    setUsername(username);
+    setAppState('chat');
+  }
   
   return (
+    appstate === 'login' ?
+    <LoginPage username={username}
+               onLogin={onLogin} /> :
     <Chat username={username}
-          chatLog={chatLog}
-          messageInput={messageInput}
-          onChange={onChange}
-          onSubmit={onSubmit} />
+        chatLog={chatLog}
+        messageInput={messageInput}
+        onChange={onChange}
+        onSubmit={onSubmit} />
   );
 }
 
